@@ -12,8 +12,8 @@ app.use(cors())
 
 app.get("/", async (req, res) => {
     const URL = req.query.URL
-    // const img = await grabity.grabIt(`${URL}` || "https://pre-interview-hj.herokuapp.com/")
-    const img = await grabity.grabIt("https://www.flickr.com")
+    const img = await grabity.grabIt(`${URL}` || "https://pre-interview-hj.herokuapp.com/")
+    // const img = await grabity.grabIt("https://www.flickr.com")
     res.json({
         img_URL: img
     });
