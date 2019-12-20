@@ -13,7 +13,7 @@ function App() {
 
 
   async function getStoreis() {
-    const res = await fetch(`http://localhost:3000/?URL=${url}`)
+    const res = await fetch(`https://pre-interview-hj.herokuapp.com//?URL=${url}`)
     const resData = await res.json()
 
     setStory(resData)
