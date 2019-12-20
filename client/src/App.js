@@ -12,15 +12,15 @@ function App() {
   const url = "https://github.com/e-oj/grabity"
 
 
-  async function getStoreis() {
-    const res = await fetch(`https://pre-interview-hj.herokuapp.com//?URL=${url}`)
-    const resData = await res.json()
+  // async function getStoreis() {
+  //   const res = await fetch(`https://pre-interview-hj.herokuapp.com//?URL=${url}`)
+  //   const resData = await res.json()
 
-    setStory(resData)
-  }
-  useEffect(() => {
-    getStoreis();
-  }, [])
+  //   setStory(resData)
+  // }
+  // useEffect(() => {
+  //   getStoreis();
+  // }, [])
 
   return (
     <>
