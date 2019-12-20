@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors())
 
 
-app.use(async (req, res) => {
+app.get("*", async (req, res) => {
     const URL = req.query.URL
     const img = await grabity.grabIt(`${URL}`)
     res.json({
