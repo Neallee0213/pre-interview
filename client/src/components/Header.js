@@ -50,7 +50,7 @@ const Head = styled.nav`
 const Header = () => {
     return (
         <Head className="navbar navbar-expand-lg navbar-light">
-            <span className="navbar-brand" href="#">Hacker News</span>
+            <span className="navbar-brand" href="#">HYUNJOON LEE</span>
             <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <FaBars className="navbar-toggler-icon" />
             </button>
