@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get("https://pre-interview-hj.herokuapp.com", async (req, res) => {
+app.get("https://pre-interview-hj.herokuapp.com/", async (req, res) => {
     const URL = req.query.URL
     const img = await grabity.grabIt(`${URL}`)
     res.json({
