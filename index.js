@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const grabity = require("grabity");
-const path = require('path')
+const path = require("path");
+
 
 const app = express()
 
@@ -9,7 +10,7 @@ app.use(express.json())
 app.use(cors())
 
 
-app.use("/", async (req, res) => {
+app.use(async (req, res) => {
     const URL = req.query.URL
     const img = await grabity.grabIt(`${URL}`)
     res.json({
