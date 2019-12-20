@@ -9,14 +9,18 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+function getURL() {
+    app.get("/", async (req, res) => {
+        const URL = req.query.URL
+        const img = await grabity.grabIt(`${URL}`)
+        res.json({
+            img_URL: img
+        });
+    })
+}
 
-app.get("/", async (req, res) => {
-    const URL = req.query.URL
-    const img = await grabity.grabIt(`${URL}`)
-    res.json({
-        img_URL: img
-    });
-})
+setTimeout(getURL, 2000);
+
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
