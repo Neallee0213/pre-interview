@@ -10,19 +10,20 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get("/", async (req, res) => {
-    const URL = req.query.URL
-    const img = await grabity.grabIt(`${URL}` || "https://pre-interview-hj.herokuapp.com/")
-    // const img = await grabity.grabIt("https://www.flickr.com")
-    res.json({
-        img_URL: img
-    });
 
-})
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    })
+    app.get("/", async (req, res) => {
+        const URL = req.query.URL
+        const img = await grabity.grabIt(`${URL}` || "https://pre-interview-hj.herokuapp.com/")
+        // const img = await grabity.grabIt("https://www.flickr.com")
+        res.json({
+            img_URL: img
+        });
+
     })
 }
 
