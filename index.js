@@ -9,14 +9,14 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get("/", async (req, res) => {
-    const URL = req.query.URL
-    const img = await grabity.grabIt(`${URL}`)
-    res.json({
-        img_URL: img
-    });
+// app.get("/", async (req, res) => {
+//     const URL = req.query.URL
+//     const img = await grabity.grabIt(`${URL}`)
+//     res.json({
+//         img_URL: img
+//     });
 
-})
+// })
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
